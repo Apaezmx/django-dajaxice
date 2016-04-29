@@ -124,7 +124,7 @@ def dajaxice_autodiscover():
 
         try:
             app_path = import_module(app).__path__
-        except AttributeError:
+        except (AttributeError, ImportError) as e:
             continue
 
         try:
